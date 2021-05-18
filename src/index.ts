@@ -1,4 +1,3 @@
-import MyClass from './MyClass';
-import Operation from './Operation';
+import StateMachineWithGraph from './StateMachineWithGraph';
 
-export { MyClass, Operation };
+export default StateMachineWithGraph;
