@@ -20,7 +20,7 @@ const stateMachine = new StateMachineWithGraph(stack, 'Test', {
   getDefinition: (scope): sfn.IChainable => sfn.Chain.start(new sfn.Pass(scope, 'Pass')),
 });
 
-console.log(stateMachine.graphJson});
+console.log(stateMachine.graphJson);
 ```
 
 Outputs:
