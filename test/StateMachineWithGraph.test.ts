@@ -1,7 +1,8 @@
+/* eslint-disable import/first */
+import { expect } from 'chai';
 import cdk = require('@aws-cdk/core');
 import sfn = require('@aws-cdk/aws-stepfunctions');
 import StateMachineWithGraph from '../src';
-import { expect } from 'chai';
 
 describe('StateMachineWithGraph outputs graph JSON', () => {
   it('renders to graph JSON', async () => {
