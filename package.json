@@ -1,5 +1,5 @@
 {
-  "name": "@andybalham/agb-cdk-state-machine-with-graph",
+  "name": "@andybalham/state-machine-with-graph",
   "version": "1.0.0",
   "description": "An extension of the CDK State Machine class that can output the underlying graph as JSON",
   "main": "index.js",
