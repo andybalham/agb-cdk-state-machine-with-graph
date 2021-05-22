@@ -30,6 +30,6 @@ jobs:
       - run: | 
           cp ./package.json ./dist/src/package.json 
           cd ./dist/src
-          npm publish
+          npm publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
