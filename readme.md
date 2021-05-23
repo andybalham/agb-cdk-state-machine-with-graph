@@ -1,11 +1,6 @@
-An extension of the CDK State Machine class that can output the underlying graph as JSON.
+# State Machine With Graph
 
-# Installing
-
-Using npm:
-```
-$ npm install @andybalham/agb-state-machine-with-diagram
-```
+An extension of the CDK `StateMachine` class that can output the underlying graph as JSON.
 
 # Usage
 
@@ -17,7 +12,8 @@ For example:
 const stack = new cdk.Stack();
 
 const stateMachine = new StateMachineWithGraph(stack, 'Test', {
-  getDefinition: (scope): sfn.IChainable => sfn.Chain.start(new sfn.Pass(scope, 'Pass')),
+  getDefinition: (scope): sfn.IChainable => 
+    sfn.Chain.start(new sfn.Pass(scope, 'Pass')),
 });
 
 console.log(stateMachine.graphJson);
