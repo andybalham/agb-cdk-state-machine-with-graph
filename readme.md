@@ -2,6 +2,8 @@
 
 An extension of the CDK `StateMachine` class that can output the underlying graph as JSON.
 
+[![Build & test](https://github.com/andybalham/agb-cdk-state-machine-with-graph/actions/workflows/build-test.yml/badge.svg)](https://github.com/andybalham/agb-cdk-state-machine-with-graph/actions/workflows/build-test.yml)
+
 # Usage
 
 `StateMachineWithGraph` can be used in place of the CDK `StateMachine`, the only difference in usage is that a function must be supplied to return the state machine definition. This function is passed a `scope` parameter that must be used to create the states within the definition.
