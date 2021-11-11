@@ -5,9 +5,5 @@
     "source.fixAll.eslint": true
   },
   "cSpell.language": "en-GB",
-  "cSpell.words": [
-    "Chainable",
-    "istanbuljs",
-    "stepfunctions"
-  ]
+  "cSpell.words": ["Backoff", "Chainable", "istanbuljs", "stepfunctions"]
 }

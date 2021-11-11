@@ -3,6 +3,7 @@ import * as sfn from '@aws-cdk/aws-stepfunctions';
 import { StateMachineProps } from '@aws-cdk/aws-stepfunctions';
 
 export interface StateMachineWithGraphProps extends Omit<StateMachineProps, 'definition'> {
+  replaceCdkTokens?: boolean;
   getDefinition: (scope: cdk.Construct) => sfn.IChainable;
 }
 
@@ -22,6 +23,8 @@ export default class StateMachineWithGraph extends sfn.StateMachine {
       'Temporary graph to render to JSON'
     );
 
-    this.graphJson = JSON.stringify(stateGraph.toGraphJson(), null, 2);
+    const graphJson = JSON.stringify(stateGraph.toGraphJson(), null, 2);
+
+    this.graphJson = props.replaceCdkTokens ? graphJson.replace(/\$\{Token\[[^\]]+\]}/g, 'CDK_TOKEN') : graphJson;
   }
 }
