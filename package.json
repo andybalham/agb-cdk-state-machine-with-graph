@@ -1,6 +1,6 @@
 {
   "name": "@andybalham/state-machine-with-graph",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "An extension of the CDK State Machine class that can output the underlying graph as JSON",
   "main": "index.js",
   "types": "index.d.ts",
@@ -57,7 +57,7 @@
     "typescript": "^4.2.2"
   },
   "peerDependencies": {
-    "@aws-cdk/aws-stepfunctions": "^1.0.0",
-    "@aws-cdk/core": "^1.0.0"
+    "@aws-cdk/aws-stepfunctions": "1.x",
+    "@aws-cdk/core": "1.x"
   }
 }
