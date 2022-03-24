@@ -14,7 +14,7 @@ For example:
 const stack = new cdk.Stack();
 
 const stateMachine = new StateMachineWithGraph(stack, 'Test', {
-  getDefinition: (scope): sfn.IChainable => 
+  getDefinition: (scope): sfn.IChainable =>
     sfn.Chain.start(new sfn.Pass(scope, 'Pass')),
 });
 
@@ -70,4 +70,3 @@ If you see an error message like the following, check that the `scope` parameter
 ```
 Error: There is already a Construct with name 'Pass' in Stack [Default]
 ```
-
