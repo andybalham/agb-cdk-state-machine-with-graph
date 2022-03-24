@@ -1,0 +1,20 @@
+name: Build & test CDK v1
+
+on:
+  push:
+    branches:
+      - cdk-v1
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: cdk-v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test-coverage
