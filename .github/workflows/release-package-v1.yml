@@ -1,4 +1,4 @@
-name: Release Package
+name: Release Package CDK v1
 
 on:
   release:
@@ -31,7 +31,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm ci
       - run: npm run build
-      - run: | 
+      - run: |
           cp ./package.json ./dist/src/package.json 
           cp ./readme.md ./dist/src/readme.md
           cd ./dist/src
