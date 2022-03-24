@@ -2,7 +2,9 @@
 
 An extension of the CDK `StateMachine` class that can output the underlying graph as JSON.
 
-[![Build & test](https://github.com/andybalham/agb-cdk-state-machine-with-graph/actions/workflows/build-test.yml/badge.svg)](https://github.com/andybalham/agb-cdk-state-machine-with-graph/actions/workflows/build-test.yml)
+Two versions are supported:
+* The CDK v1 version is [@andybalham/state-machine-with-graph](https://www.npmjs.com/package/@andybalham/state-machine-with-graph) [![Build & test](https://github.com/andybalham/agb-cdk-state-machine-with-graph/actions/workflows/build-test-v1.yml/badge.svg)](https://github.com/andybalham/agb-cdk-state-machine-with-graph/actions/workflows/build-test-v1.yml)
+* The CDK v2 version is [@andybalham/state-machine-with-graph-v2](https://www.npmjs.com/package/@andybalham/state-machine-with-graph-v2) [![Build & test](https://github.com/andybalham/agb-cdk-state-machine-with-graph/actions/workflows/build-test.yml/badge.svg)](https://github.com/andybalham/agb-cdk-state-machine-with-graph/actions/workflows/build-test.yml)
 
 # Usage
 

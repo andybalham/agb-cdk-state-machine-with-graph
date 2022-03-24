@@ -1,17 +1,17 @@
-import * as cdk from '@aws-cdk/core';
-import * as sfn from '@aws-cdk/aws-stepfunctions';
-import { StateMachineProps } from '@aws-cdk/aws-stepfunctions';
+import { Stack, aws_stepfunctions as sfn } from 'aws-cdk-lib';
+import { StateMachineProps } from 'aws-cdk-lib/aws-stepfunctions';
+import { Construct } from 'constructs';
 
 export interface StateMachineWithGraphProps extends Omit<StateMachineProps, 'definition'> {
   replaceCdkTokens?: boolean;
-  getDefinition: (scope: cdk.Construct) => sfn.IChainable;
+  getDefinition: (scope: Construct) => sfn.IChainable;
 }
 
 export default class StateMachineWithGraph extends sfn.StateMachine {
   //
   readonly graphJson: string;
 
-  constructor(scope: cdk.Construct, id: string, props: StateMachineWithGraphProps) {
+  constructor(scope: Construct, id: string, props: StateMachineWithGraphProps) {
     //
     super(scope, id, {
       ...props,
@@ -19,7 +19,7 @@ export default class StateMachineWithGraph extends sfn.StateMachine {
     });
 
     const stateGraph = new sfn.StateGraph(
-      props.getDefinition(new cdk.Stack()).startState,
+      props.getDefinition(new Stack()).startState,
       'Temporary graph to render to JSON'
     );
 

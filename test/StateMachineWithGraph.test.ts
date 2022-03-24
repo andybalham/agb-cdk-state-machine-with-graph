@@ -1,15 +1,17 @@
 /* eslint-disable import/first */
 import { expect } from 'chai';
-import cdk = require('@aws-cdk/core');
-import sfn = require('@aws-cdk/aws-stepfunctions');
-import * as sfnTasks from '@aws-cdk/aws-stepfunctions-tasks';
-import * as lambda from '@aws-cdk/aws-lambda';
+import {
+  Stack,
+  aws_stepfunctions as sfn,
+  aws_stepfunctions_tasks as sfnTasks,
+  aws_lambda as lambda,
+} from 'aws-cdk-lib';
 import StateMachineWithGraph from '../src';
 
 describe('StateMachineWithGraph outputs graph JSON', () => {
   it('renders to graph JSON', async () => {
     //
-    const stack = new cdk.Stack();
+    const stack = new Stack();
 
     const stateMachine = new StateMachineWithGraph(stack, 'Test', {
       getDefinition: (scope): sfn.IChainable => sfn.Chain.start(new sfn.Pass(scope, 'Pass')),
@@ -28,7 +30,7 @@ describe('StateMachineWithGraph outputs graph JSON', () => {
 
   it('renders to graph JSON with CDK token', async () => {
     //
-    const stack = new cdk.Stack();
+    const stack = new Stack();
 
     const stateMachine = new StateMachineWithGraph(stack, 'LambdaInvoke-CDK', {
       replaceCdkTokens: true,
