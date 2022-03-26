@@ -1,6 +1,6 @@
 {
   "name": "@andybalham/state-machine-with-graph",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "An extension of the CDK State Machine class that can output the underlying graph as JSON",
   "main": "index.js",
   "types": "index.d.ts",
